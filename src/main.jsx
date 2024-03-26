@@ -8,6 +8,7 @@ import ListedBooks from "./Components/Pages/ListedBooks.jsx";
 import PagesToRead from "./Components/Pages/PagesToRead.jsx";
 import Book from "./Components/Pages/Book.jsx";
 import ErrorPage from "./Components/ErrorPage.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -40,5 +41,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Toaster></Toaster>
   </React.StrictMode>
 );
