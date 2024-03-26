@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
   return (
     <div>
@@ -24,30 +26,74 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                    : ""
+                }
+              >
                 <a>Home</a>
-              </li>
-              <li>
+              </NavLink>
+              <NavLink
+                to={"/listedbooks"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                    : ""
+                }
+              >
                 <a>Listed Books</a>
-              </li>
-              <li>
+              </NavLink>
+              <NavLink
+                to={"/pagestoread"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                    : ""
+                }
+              >
                 <a>Pages to Read</a>
-              </li>
+              </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl font-bold">Book Vibe</a>
+          <a className="btn btn-ghost text-2xl md:text-3xl font-bold">
+            Book Vibe
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 font-semibold">
-            <li>
+          <ul className="menu menu-horizontal space-x-5 font-semibold">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                  : ""
+              }
+            >
               <a>Home</a>
-            </li>
-            <li>
+            </NavLink>
+            <NavLink
+              to={"/listedbooks"}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                  : ""
+              }
+            >
               <a>Listed Books</a>
-            </li>
-            <li>
+            </NavLink>
+            <NavLink
+              to={"/pagestoread"}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                  : ""
+              }
+            >
               <a>Pages to Read</a>
-            </li>
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end space-x-4">
