@@ -26,6 +26,7 @@ const SingleReadBook = ({ book }) => {
           <h2 className="card-title">{bookName}</h2>
           <p>By : {author}</p>
           <div className="flex items-center flex-wrap gap-5">
+            <span className="font-bold"> Tag:</span>
             {tags.map((tag) => (
               <a
                 key={tag.id}

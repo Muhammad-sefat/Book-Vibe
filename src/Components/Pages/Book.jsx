@@ -1,5 +1,5 @@
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
-import { saveBook } from "../Utilites";
+import { saveBook, saveBook1 } from "../Utilites";
 
 const Book = () => {
   const books = useLoaderData();
@@ -19,6 +19,9 @@ const Book = () => {
   } = singleBook;
   const handleStroed = (singleBook) => {
     saveBook(singleBook);
+  };
+  const handleStroed1 = (singleBook) => {
+    saveBook1(singleBook);
   };
   return (
     <div className="px-10 mx-auto">
@@ -40,14 +43,13 @@ const Book = () => {
               <span className="font-bold">Review</span> : {review}
             </p>
             <div className="flex flex-wrap py-3 gap-2 border-t border-dashed dark:border-gray-600">
+              <span className="font-bold"> Tag:</span>
               {tags.map((tag) => (
                 <a
                   key={tag.id}
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="mx-auto px-4 rounded-sm hover:underline text-lime-600 font-bold"
+                  className="mx-auto px-4 rounded-xl hover:underline text-lime-600 font-bold bg-lime-100"
                 >
-                  {tag}
+                  #{tag}
                 </a>
               ))}
             </div>
@@ -76,7 +78,7 @@ const Book = () => {
                 Read
               </NavLink>
               <NavLink
-                to={"/listedbooks"}
+                onClick={() => handleStroed1(singleBook)}
                 className="px-5 py-3 text-lg font-semibold border rounded dark:border-gray-800 hover:bg-blue-400"
               >
                 Wishlist
