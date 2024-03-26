@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { Link, Outlet } from "react-router-dom";
 const ListedBooks = () => {
   const [index, setIndex] = useState(0);
   return (
@@ -26,23 +27,26 @@ const ListedBooks = () => {
         </details>
       </div>
       <div className="flex items-start overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 py-5">
-        <a
+        <Link
+          to={""}
           onClick={() => setIndex(0)}
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
             index === 0 ? "border-2 border-b-0 font-semibold" : "border-b"
           } dark:border-gray-600 dark:text-gray-600 rounded-md`}
         >
           <span>Read Books</span>
-        </a>
-        <a
+        </Link>
+        <Link
+          to={"wishlistbook"}
           onClick={() => setIndex(1)}
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
             index === 1 ? "border-2 border-b-0 font-semibold" : "border-b"
           } dark:border-gray-600 dark:text-gray-600 rounded-md`}
         >
           <span>Wishlist Books</span>
-        </a>
+        </Link>
       </div>
+      <Outlet></Outlet>
     </div>
   );
 };
