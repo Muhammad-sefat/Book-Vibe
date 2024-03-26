@@ -8,7 +8,6 @@ const ReadBook = () => {
     const stroedBooks = getBooks();
     setBooks(stroedBooks);
   }, []);
-  console.log(books);
   return (
     <div>
       {books.map((book) => (

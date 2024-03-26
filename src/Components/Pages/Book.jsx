@@ -1,5 +1,6 @@
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
-import { saveBook, saveBook1 } from "../Utilites";
+import { getBooks, saveBook, saveBook1 } from "../Utilites";
+import toast from "react-hot-toast";
 
 const Book = () => {
   const books = useLoaderData();
@@ -21,6 +22,11 @@ const Book = () => {
     saveBook(singleBook);
   };
   const handleStroed1 = (singleBook) => {
+    const stroedData = getBooks();
+    const isExist = stroedData.find((d) => d.bookId === singleBook.bookId);
+    if (isExist) {
+      return toast.error("Already Read This Book!");
+    }
     saveBook1(singleBook);
   };
   return (
@@ -47,7 +53,7 @@ const Book = () => {
               {tags.map((tag) => (
                 <a
                   key={tag.id}
-                  className="mx-auto px-4 rounded-xl hover:underline text-lime-600 font-bold bg-lime-100"
+                  className="mx-auto px-4 rounded-xl hover:underline text-green-600 font-bold bg-green-100"
                 >
                   #{tag}
                 </a>
@@ -73,7 +79,7 @@ const Book = () => {
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start pt-3">
               <NavLink
                 onClick={() => handleStroed(singleBook)}
-                className="px-5 py-3 text-lg border font-semibold rounded dark:bg-violet-600 dark:text-gray-50 hover:bg-lime-500"
+                className="px-5 py-3 text-lg border font-semibold rounded dark:bg-violet-600 dark:text-gray-50 hover:bg-green-500"
               >
                 Read
               </NavLink>

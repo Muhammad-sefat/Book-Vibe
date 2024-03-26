@@ -11,11 +11,11 @@ export const saveBook = (book) => {
   let books = getBooks();
   const isExist = books.find((d) => d.bookId === book.bookId);
   if (isExist) {
-    return toast.error("Already Bookmarked!");
+    return toast.error("Already Added This Book!");
   }
   books.push(book);
   localStorage.setItem("books", JSON.stringify(books));
-  toast.success("Blog Bookmarked Successfully!");
+  toast.success("Book Added Successfully!");
 };
 
 export const getBooks1 = () => {
@@ -31,9 +31,9 @@ export const saveBook1 = (book) => {
   let books = getBooks1();
   const isExist = books.find((d) => d.bookId === book.bookId);
   if (isExist) {
-    return toast.error("Already Bookmarked!");
+    return toast.error("Already Added This Book!");
   }
   books.push(book);
   localStorage.setItem("books1", JSON.stringify(books));
-  toast.success("Blog Bookmarked Successfully!");
+  toast.success("Book Added Successfully!");
 };

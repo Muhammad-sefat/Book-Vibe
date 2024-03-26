@@ -18,7 +18,7 @@ const Books = ({ book }) => {
               key={tag.id}
               rel="noopener noreferrer"
               href="#"
-              className="mx-auto px-4 rounded-sm hover:underline text-lime-600 font-bold"
+              className="mx-auto px-4 rounded-xl hover:underline text-green-500 bg-green-50 font-bold"
             >
               {tag}
             </a>

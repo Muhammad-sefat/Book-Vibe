@@ -68,7 +68,7 @@ const NavBar = () => {
               to={"/"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                  ? "text-green-500 border px-3 py-2 border-green-500 rounded-md font-bold"
                   : ""
               }
             >
@@ -78,7 +78,7 @@ const NavBar = () => {
               to={"/listedbooks"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                  ? "text-green-500 border px-3 py-2 border-green-500 rounded-md font-bold"
                   : ""
               }
             >
@@ -88,7 +88,7 @@ const NavBar = () => {
               to={"/pagestoread"}
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-500 border px-3 py-2 border-lime-500 rounded-md font-bold"
+                  ? "text-green-500 border px-3 py-2 border-green-500 rounded-md font-bold"
                   : ""
               }
             >
@@ -97,7 +97,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-4">
-          <a className="btn bg-lime-600 text-white">Sign In</a>
+          <a className="btn bg-green-600 text-white">Sign In</a>
           <a className="btn bg-blue-400 text-white">Sign Up</a>
         </div>
       </div>

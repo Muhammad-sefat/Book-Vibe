@@ -9,7 +9,7 @@ const Hero = () => {
             <h1 className="text-2xl md:text-5xl font-bold pb-8">
               Books to freshen up your bookshelf
             </h1>
-            <button className="btn bg-lime-600 text-white font-semibold">
+            <button className="btn bg-green-600 text-white font-semibold">
               View the List
             </button>
           </div>
