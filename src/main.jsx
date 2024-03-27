@@ -11,6 +11,7 @@ import ErrorPage from "./Components/ErrorPage.jsx";
 import { Toaster } from "react-hot-toast";
 import ReadBook from "./Components/Pages/ReadBook.jsx";
 import WishlistBook from "./Components/Pages/WishlistBook.jsx";
+import Review from "./Components/Pages/Review.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             element: <WishlistBook></WishlistBook>,
           },
         ],
+      },
+      {
+        path: "/review",
+        element: <Review></Review>,
       },
       {
         path: "/pagestoread",

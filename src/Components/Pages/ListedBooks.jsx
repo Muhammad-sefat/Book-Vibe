@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 const ListedBooks = () => {
   const [index, setIndex] = useState(0);
   return (
@@ -7,7 +7,13 @@ const ListedBooks = () => {
       <div className="border flex justify-center  bg-gray-200 p-5 rounded-md">
         <h1 className="text-2xl font-bold">Books</h1>
       </div>
-
+      <div className=" text-center py-3">
+        <NavLink to={"/review"}>
+          <button className="btn text-xl font-semibold">
+            Give Your Review
+          </button>
+        </NavLink>
+      </div>
       <div className="flex items-start overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 py-5">
         <Link
           to={""}
