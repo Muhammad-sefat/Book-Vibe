@@ -8,7 +8,6 @@ const WishlistBook = () => {
     const stroedBooks = getBooks1();
     setBooks(stroedBooks);
   }, []);
-  console.log(books);
   return (
     <div>
       {books.map((book) => (

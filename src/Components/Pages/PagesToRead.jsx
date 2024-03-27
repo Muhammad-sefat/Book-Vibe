@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { getBooks } from "../Utilites";
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 const PagesToRead = () => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
@@ -28,31 +36,31 @@ const PagesToRead = () => {
   };
 
   return (
-    <BarChart
-      width={800}
-      height={400}
-      data={books}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="bookName" />
-      <YAxis />
-      <Bar
-        dataKey="totalPages"
-        fill="#8884d8"
-        shape={<TriangleBar />}
-        label={{ position: "top" }}
+    <ResponsiveContainer width="100%" height={400}>
+      <BarChart
+        data={books}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
       >
-        {books.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-        ))}
-      </Bar>
-    </BarChart>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="bookName" />
+        <YAxis />
+        <Bar
+          dataKey="totalPages"
+          fill="#8884d8"
+          shape={<TriangleBar />}
+          label={{ position: "top" }}
+        >
+          {books.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+          ))}
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 
