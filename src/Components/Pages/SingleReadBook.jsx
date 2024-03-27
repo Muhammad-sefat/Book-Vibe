@@ -1,14 +1,10 @@
 import { GrLocation } from "react-icons/gr";
 import { GoPeople } from "react-icons/go";
 import { RiPagesLine } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const SingleReadBook = ({ book }) => {
-  const navigate = useNavigate();
-  function handleBtn() {
-    navigate(`/book/:id`);
-  }
   const {
     author,
     category,
@@ -19,6 +15,7 @@ const SingleReadBook = ({ book }) => {
     publisher,
     totalPages,
     rating,
+    bookId,
   } = book;
   return (
     <div className="py-5">
@@ -62,11 +59,8 @@ const SingleReadBook = ({ book }) => {
             <div className="bg-orange-100 text-orange-400 rounded-lg p-2">
               Rating : {rating}
             </div>
-            <Link>
-              <button
-                onClick={handleBtn}
-                className="btn bg-green-500 text-white font-semibold"
-              >
+            <Link to={`/book/${bookId}`}>
+              <button className="btn bg-green-500 text-white font-semibold">
                 View Details
               </button>
             </Link>
