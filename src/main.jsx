@@ -12,6 +12,7 @@ import { Toaster } from "react-hot-toast";
 import ReadBook from "./Components/Pages/ReadBook.jsx";
 import WishlistBook from "./Components/Pages/WishlistBook.jsx";
 import Review from "./Components/Pages/Review.jsx";
+import SignIn from "./Components/Pages/SignIn.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/review",
         element: <Review></Review>,
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
       },
       {
         path: "/pagestoread",
